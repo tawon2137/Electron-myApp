@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+     <!-- Meterial icon 대신 font-awsome 사용했습니다. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/TW.css">
+    <style>
+      .titleBar{
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+      }
+      .tw-navbar ul li.active{
+        background: rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+  <header>
+    <div class="tw-navbar indigo-a-3-text titleBar">
+      <ul class="container">
+        <li class="logoTitle right">
+          TW 's Bookmark
+        </li>
+        <li id='btn_home' class="waves-effect active" data-type='home' ><i class="fa fa-home" aria-hidden="true"></i></li>
+        <li id='btn_github' class="waves-effect" data-type='github' ><i class="fa fa-github" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div id='data-content' class="row container">
+   
+    </div>
+  </main>
+    <!-- js 파일같은경우는 body 끝단 head태그 마지막이든 어디서든 사용가능합니다. -->
+    <script src="http://media.adrcdn.com/scripts/external/tweenlite/1.18.0/TweenLite.min.js"></script>
+    <script src="./devjs/TW.js"></script>
+
+    <script>
+      require('./renderer.js');
+    </script>
+  </body>
+</html>
