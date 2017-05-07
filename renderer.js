@@ -19,13 +19,11 @@ class RendererMain {
 
     _bindIpcEvent() {
         ipcRenderer.on('data', (event, data) => {
-            console.log(data);
             this._dataDom.innerHTML = this._getHtml(data);
             this._setItemDom();
         });
     }
     _changeType(event) {
-        console.log(this);
         const parentElemet = this.parentElement;
         if ( !parentElemet ) return false
         const activeElement = parentElemet.getElementsByClassName('active');
@@ -45,7 +43,6 @@ class RendererMain {
 
     _getHtml(data) {
         const html = data.map(item => {
-            console.log(item);
             return `
             <div class="card">
                 <div class="card-content">
@@ -53,7 +50,7 @@ class RendererMain {
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
                 </div>
-                <div class="card-title clickLink">${item.url}</div>
+                <div class="card-content clickLink blue-a-4-text">${item.url}</div>
                 <div class="card-content">${item.title}</div>
             </div>
             `;

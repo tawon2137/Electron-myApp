@@ -39,7 +39,7 @@ const template = [
 app.on('ready', () => {
    initData();
 
-   const tray = new Tray(path.join(__dirname, '/myapp-logo.png'));
+   const tray = new Tray(path.join(__dirname, '/image/icon/myapp-logo.png'));
 
    const menu = Menu.buildFromTemplate(template);
 
@@ -56,7 +56,10 @@ app.on('ready', () => {
        resizable : false,
        movable : false,
        acceptFirstMouse : true,
+       frame : false,
+       icon : path.join(__dirname,`/image/icon/icon.png`)
    });
+
    
 
     win.loadURL(`file://${__dirname}/index.html`);
