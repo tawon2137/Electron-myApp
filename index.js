@@ -56,9 +56,11 @@ app.on('ready', () => {
        resizable : false,
        movable : false,
        acceptFirstMouse : true,
-       frame : false,
-       icon : path.join(__dirname,`/image/icon/icon.png`)
+       icon : path.join(__dirname,`/image/icon/icon.png`),
    });
+
+    win.setMenu(null)
+
 
    
 
@@ -116,7 +118,7 @@ function saveUrl(_type, _url) {
         request.get(_url)
             .end((error, response) => {
                 getTitle(response.res.text).then(_title => {
-                    data.push({type : _type, url : _url, title : _title});
+                    data.push({type : _type, url : _url, title});
                     fs.writeFileSync(DATA_PATH, JSON.stringify(data));
 
                     if ( type === _type) {
